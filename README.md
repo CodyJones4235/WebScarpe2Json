@@ -23,5 +23,10 @@ the left and hit convert, if this data looks good for your purpose then hit copy
 next you're gonna want to install jq im using ubuntu 18.04 so the command for me is 
 `sudo apt-get install jq`. Once you jq installed navigate to your project folder and make a new .json file 
 open up your new .json file and paste the data we copied. After pasting your data move back to your terminal and to convert this .json file to a Django fixture format you will want this command 
+
+
 jq 'map({model: "**name of model** ", **pk/id**: .**pk/id**, fields:{ **new data name**: .**data name in your original json file**  }})' **filename.json** > **newfile.json**
+
+
 everything above in bold can be changed to the data you have, and after inputting your own data you should be left with a second file containing your data formatted into a Django fixture.
+
